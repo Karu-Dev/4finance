@@ -4,7 +4,7 @@ import { ActionType } from "./actions";
 import moment from "moment";
 const initialState: State = {
   loans: [],
-  inputs: { user: "", amount: 0, date: moment() }
+  inputs: { user: "", amount: 50, date: moment() }
 };
 function reducer(state: any = initialState, action: ActionType) {
   if (action.type === "TAKELOAN") {
@@ -34,6 +34,7 @@ function reducer(state: any = initialState, action: ActionType) {
       if (id === action.payload && !it.isExtended) {
         it.interest = parseFloat((it.interest * 1.5).toFixed(2));
         it.date.add(7, "d");
+        state.inputs.date = it.date.subtract(7, "d");
         it.isExtended = true;
       }
     });

@@ -22,15 +22,19 @@ export const DisplayLoansFC: React.FC<
           <td>{it.user}</td>
           <td>{(it.amount + it.interest).toFixed(2)} Euro</td>
           <td>due to: {it.date.format("DD MM YYYY")}</td>
-          <button
-            onClick={e => {
-              console.log(it.interest);
-              extendLoan(id);
-              e.preventDefault();
-            }}
-          >
-            Extend
-          </button>
+          {it.isExtended ? (
+            ""
+          ) : (
+            <button
+              onClick={e => {
+                console.log(it.interest);
+                extendLoan(id);
+                e.preventDefault();
+              }}
+            >
+              Extend
+            </button>
+          )}
         </tr>
       ))}
     </table>

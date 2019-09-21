@@ -17,12 +17,12 @@ export function checkIfValid(user: string, amount: number, date: Moment) {
       if (userOk) {
         return "OK";
       } else {
-        return "USER";
+        return "User not valid";
       }
     } else {
-      return "AMOUNT";
+      return "Please choose an amount greater than 10 Eur and not greater than 400 Eur";
     }
   } else {
-    return "DATE";
+    return "Please choose a date from tomorrow to 30 days from today";
   }
 }
