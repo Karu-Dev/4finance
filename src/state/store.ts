@@ -4,7 +4,7 @@ import { ActionType } from "./actions";
 import moment from "moment";
 const initialState: State = {
   loans: [],
-  inputs: { user: "", amount: 50, date: moment() }
+  inputs: { user: "", amount: 50, date: moment().add(7, "d") }
 };
 function reducer(state: any = initialState, action: ActionType) {
   if (action.type === "TAKELOAN") {
@@ -31,11 +31,14 @@ function reducer(state: any = initialState, action: ActionType) {
   }
   if (action.type === "EXTENDLOAN") {
     state.loans.map((it: Loan, id: number) => {
+      const newTime = new Date(state.inputs.date.format())
       if (id === action.payload && !it.isExtended) {
         it.interest = parseFloat((it.interest * 1.5).toFixed(2));
+        const itNewTime = new Date(it.date.format())
+        it.date=moment(itNewTime)
         it.date.add(7, "d");
-        state.inputs.date = it.date.subtract(7, "d");
         it.isExtended = true;
+        state.inputs.date=moment(newTime)
       }
     });
     return { ...state, loans: [...state.loans] };

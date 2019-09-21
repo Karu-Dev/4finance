@@ -26,7 +26,7 @@ function dispatchToProps(dispatch: any) {
 
 export const InputsFC: React.FC<
   ReturnType<typeof stateToProps> & ReturnType<typeof dispatchToProps>
-> = ({ inputs, setUserInput, setAmountInput, setDateInput }) => {
+> = ({ inputs, setUserInput }) => {
   return (
     <form>
       <DiscreteSlider></DiscreteSlider>

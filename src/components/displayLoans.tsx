@@ -27,7 +27,6 @@ export const DisplayLoansFC: React.FC<
           ) : (
             <button
               onClick={e => {
-                console.log(it.interest);
                 extendLoan(id);
                 e.preventDefault();
               }}

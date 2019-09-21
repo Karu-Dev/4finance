@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import MomentUtils from "@date-io/moment";
-import { Moment } from "moment";
+import moment,{ Moment } from "moment";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker
@@ -25,7 +25,8 @@ const DatePickerFC: React.FC<
   // The first commit of Material-UI
   function handleDateChange(date: Moment | null) {
     if (date) {
-      setDateInput(date);
+        const newTime = new Date(date.format())
+      setDateInput(moment(newTime));
     }
   }
 
