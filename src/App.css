@@ -5,6 +5,11 @@
 .App-logo {
   height: 40vmin;
 }
+body td {
+  text-align: center;
+  width: 10rem;
+  border: 1px solid black;
+}
 
 .App-header {
   background-color: #282c34;

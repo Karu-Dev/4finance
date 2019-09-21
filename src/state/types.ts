@@ -1,13 +1,14 @@
+import {Moment} from "moment"
 export interface Loan {
   user: string;
-  date: Date;
+  date: Moment;
   amount: number;
   isExtended: boolean;
 }
 export interface Inputs {
   user: string;
   amount: number;
-  date: Date;
+  date: Moment;
 }
 export interface State {
   loans: Loan[];
