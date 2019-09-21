@@ -1,5 +1,5 @@
 import { createStore } from "redux";
-import { State } from "./types";
+import { State, Loan } from "./types";
 import { ActionType } from "./actions";
 import moment from "moment";
 const initialState: State = {
@@ -8,12 +8,16 @@ const initialState: State = {
 };
 function reducer(state: any = initialState, action: ActionType) {
   if (action.type === "TAKELOAN") {
-    const user = state.inputs.user;
-    const amount = state.inputs.amount;
-    const date = state.inputs.date;
+    const user = action.payload.user;
+    const amount = action.payload.amount;
+    const date = action.payload.date;
+    const interest = action.payload.interest;
     return {
       ...state,
-      loans: [...state.loans, { user, date, amount, isExtended: false }]
+      loans: [
+        ...state.loans,
+        { user, date, amount, isExtended: false, interest }
+      ]
     };
   }
   if (action.type === "SETUSERINPUT") {
@@ -23,8 +27,17 @@ function reducer(state: any = initialState, action: ActionType) {
     return { ...state, inputs: { ...state.inputs, amount: action.payload } };
   }
   if (action.type === "SETDATEINPUT") {
-    console.log(state.inputs.date);
     return { ...state, inputs: { ...state.inputs, date: action.payload } };
+  }
+  if (action.type === "EXTENDLOAN") {
+    state.loans.map((it: Loan, id: number) => {
+      if (id === action.payload && !it.isExtended) {
+        it.interest = parseFloat((it.interest * 1.5).toFixed(2));
+        it.date.add(7, "d");
+        it.isExtended = true;
+      }
+    });
+    return { ...state, loans: [...state.loans] };
   }
   return state;
 }

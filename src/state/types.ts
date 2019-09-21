@@ -3,6 +3,7 @@ export interface Loan {
   user: string;
   date: Moment;
   amount: number;
+  interest:number;
   isExtended: boolean;
 }
 export interface Inputs {
