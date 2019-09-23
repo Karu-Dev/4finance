@@ -31,7 +31,8 @@ const DatePickerFC: React.FC<
   }
 
   return (
-    <MuiPickersUtilsProvider utils={MomentUtils}>
+   <div className="DatePicker">
+      <MuiPickersUtilsProvider utils={MomentUtils}>
       <Grid container justify="flex-start">
         <KeyboardDatePicker
           disableToolbar
@@ -48,6 +49,7 @@ const DatePickerFC: React.FC<
         />
       </Grid>
     </MuiPickersUtilsProvider>
+   </div>
   );
 };
 export const DatePicker = connect(

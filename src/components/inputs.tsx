@@ -30,7 +30,7 @@ export const InputsFC: React.FC<
 > = ({ inputs }) => {
   return (
     <div>
-      <Grid container>
+      <Grid container spacing={3}>
         <Grid
           item
           xs={7}
@@ -38,7 +38,7 @@ export const InputsFC: React.FC<
         >
           <DiscreteSlider></DiscreteSlider>
         </Grid>
-        <Grid item xs={4} style={{ display: "flex", alignContent: "flex-end" }}>
+        <Grid item xs={3}>
           <DatePicker></DatePicker>
         </Grid>
         <Grid
