@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+.mainComponent {
+  background-color: orange;
+}
 .App-logo {
   height: 40vmin;
 }

@@ -19,7 +19,13 @@ export const DisplayLoansFC: React.FC<
   return (
     <div>
       {loans.map((it, id) => (
-        <Paper style={{ textAlign: "center" }}>
+        <Paper
+          style={{
+            textAlign: "center",
+            backgroundColor: "gray",
+            color: "white"
+          }}
+        >
           <Typography variant="h5" component="h3">
             {(it.amount + it.interest).toFixed(2)} Euro{" "}
             {it.isExtended ? (

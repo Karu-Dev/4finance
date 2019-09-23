@@ -19,14 +19,21 @@ const AppFC: React.FC<
 > = () => {
   return (
     <div>
-      <img
-        width="500"
-        height="300"
-        src="https://thumbs.gfycat.com/ConcreteLimitedCockerspaniel-size_restricted.gif"
-      />
       <Grid container spacing={1}>
+        <Grid
+          item
+          xs={12}
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          <img
+            width="500"
+            height="300"
+            src="https://thumbs.gfycat.com/ConcreteLimitedCockerspaniel-size_restricted.gif"
+          />
+        </Grid>
+
         <Grid item xs={1} />
-        <Grid item xs={10}>
+        <Grid item xs={10} className="mainComponent">
           <DisplayLoans></DisplayLoans>
           <Inputs></Inputs>
         </Grid>

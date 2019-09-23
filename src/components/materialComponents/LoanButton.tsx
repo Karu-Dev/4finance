@@ -23,7 +23,8 @@ function dispatchToProps(dispatch: any) {
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     close: {
-      padding: theme.spacing(0.5)
+      padding: theme.spacing(0.5),
+      backgroundColor: "gray"
     }
   })
 );
@@ -123,6 +124,10 @@ const LoanButtonFC: React.FC<
   return (
     <div>
       <Button
+        style={{
+          backgroundColor: "gray",
+          color: "white"
+        }}
         variant="outlined"
         size="large"
         color="inherit"
