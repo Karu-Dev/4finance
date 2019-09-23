@@ -19,7 +19,6 @@ export const DisplayLoansFC: React.FC<
     <table>
       {loans.map((it, id) => (
         <tr key={id}>
-          <td>{it.user}</td>
           <td>{(it.amount + it.interest).toFixed(2)} Euro</td>
           <td>due to: {it.date.format("DD MM YYYY")}</td>
           {it.isExtended ? (

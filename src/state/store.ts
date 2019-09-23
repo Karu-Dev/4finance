@@ -8,7 +8,6 @@ const initialState: State = {
 };
 function reducer(state: any = initialState, action: ActionType) {
   if (action.type === "TAKELOAN") {
-    const user = action.payload.user;
     const amount = action.payload.amount;
     const date = action.payload.date;
     const interest = action.payload.interest;
@@ -16,7 +15,7 @@ function reducer(state: any = initialState, action: ActionType) {
       ...state,
       loans: [
         ...state.loans,
-        { user, date, amount, isExtended: false, interest }
+        { date, amount, isExtended: false, interest }
       ]
     };
   }

@@ -5,7 +5,11 @@ import Snackbar from "@material-ui/core/Snackbar";
 import { Loan, State } from "../../state/types";
 import { takeLoan } from "../../state/actions";
 import { connect } from "react-redux";
-import { checkIfValid } from "../../functions/inputValidation";
+import {
+  checkIfValid,
+  checkTabOpenTime,
+  checkLatestInputs
+} from "../../functions/Validation";
 function stateToProps(state: State) {
   return state;
 }
@@ -77,6 +81,45 @@ const LoanButtonFC: React.FC<
   };
 
   const classes = useStyles();
+  function spamValidator() {
+    let browserStorage = localStorage.getItem("browserOpen");
+    const timeNow = new Date().getTime();
+    if (browserStorage) {
+      const arr = browserStorage.split(",");
+      arr.splice(-3, arr.length - 2);
+      const newBrowserArr = [...arr, timeNow];
+      localStorage.setItem("browserOpen", newBrowserArr.toString());
+    } else {
+      localStorage.setItem("browserOpen", [timeNow].toString());
+    }
+    return checkLatestInputs(localStorage.getItem("browserOpen") as string);
+  }
+
+  function buttonClick() {
+    const validator = checkIfValid(inputs.user, inputs.amount, inputs.date);
+    const sessionRiskHandler = checkTabOpenTime(sessionStorage.getItem(
+      "tabOpen"
+    ) as string);
+    if (validator === "OK") {
+      if (sessionRiskHandler) {
+        const spamRiskHandler = spamValidator();
+        if (spamRiskHandler) {
+          takeLoan({
+            ...inputs,
+            amount: inputs.amount,
+            interest: parseFloat((inputs.amount / 10).toFixed(2)),
+            isExtended: false
+          });
+        } else {
+          handleClick("Spammer")();
+        }
+      } else {
+        handleClick("We're sorry blabla")();
+      }
+    } else {
+      handleClick(validator)();
+    }
+  }
   return (
     <div>
       <Button
@@ -84,21 +127,7 @@ const LoanButtonFC: React.FC<
         size="large"
         color="inherit"
         onClick={() => {
-          const validator = checkIfValid(
-            inputs.user,
-            inputs.amount,
-            inputs.date
-          );
-          if (validator === "OK") {
-            takeLoan({
-              ...inputs,
-              amount: inputs.amount,
-              interest: parseFloat((inputs.amount / 10).toFixed(2)),
-              isExtended: false
-            });
-          } else {
-            handleClick(validator)();
-          }
+          buttonClick();
         }}
       >
         Saņemt{" "}

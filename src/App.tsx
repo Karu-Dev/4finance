@@ -4,13 +4,15 @@ import { connect } from "react-redux";
 import { State } from "./state/types";
 import { Inputs } from "./components/inputs";
 import { DisplayLoans } from "./components/displayLoans";
+import moment from "moment";
 function stateToProps(state: State) {
   return state;
 }
 function dispatchToProps(dispatch: any) {
   return {}
 }
-
+const tabOpenTs = new Date()
+sessionStorage.setItem("tabOpen", tabOpenTs.getTime().toString())
 const AppFC: React.FC<
   ReturnType<typeof stateToProps> & ReturnType<typeof dispatchToProps>
 > = () => {
