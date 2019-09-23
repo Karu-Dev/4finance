@@ -6,6 +6,7 @@ import { setUserInput, setAmountInput, setDateInput } from "../state/actions";
 import { DiscreteSlider } from "./materialComponents/LoanSlider";
 import { LoanButton } from "./materialComponents/LoanButton";
 import { DatePicker } from "./materialComponents/DatePicker";
+import { Grid } from "@material-ui/core";
 function stateToProps(state: State) {
   return state;
 }
@@ -26,24 +27,39 @@ function dispatchToProps(dispatch: any) {
 
 export const InputsFC: React.FC<
   ReturnType<typeof stateToProps> & ReturnType<typeof dispatchToProps>
-> = ({ inputs, setUserInput }) => {
+> = ({ inputs }) => {
   return (
-    <form>
-      <DiscreteSlider></DiscreteSlider>
-      <input
-        type="text"
-        value={inputs.user}
-        onChange={target => {
-          setUserInput(target.target.value);
-        }}
-      />
-      <DatePicker></DatePicker>
-      <span>
-        You will have to pay back {(inputs.amount * 1.1).toFixed(2)}Eur{" "}
-        {moment().isAfter(inputs.date) ? "" : moment().to(inputs.date)}
-      </span>
-      <LoanButton></LoanButton>
-    </form>
+    <div>
+      <Grid container>
+        <Grid
+          item
+          xs={7}
+          style={{ display: "flex", justifyContent: "flex-end" }}
+        >
+          <DiscreteSlider></DiscreteSlider>
+        </Grid>
+        <Grid item xs={4} style={{ display: "flex", alignContent: "flex-end" }}>
+          <DatePicker></DatePicker>
+        </Grid>
+        <Grid
+          item
+          xs={11}
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          <p>
+            You will have to pay back {(inputs.amount * 1.1).toFixed(2)}Eur{" "}
+            {moment().isAfter(inputs.date) ? "" : moment().to(inputs.date)}
+          </p>
+        </Grid>
+        <Grid
+          item
+          xs={11}
+          style={{ display: "flex", justifyContent: "center" }}
+        >
+          <LoanButton></LoanButton>
+        </Grid>
+      </Grid>
+    </div>
   );
 };
 export const Inputs = connect(

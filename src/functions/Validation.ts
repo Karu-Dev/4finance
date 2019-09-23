@@ -1,11 +1,7 @@
 import moment, { Moment } from "moment";
-export function checkIfValid(user: string, amount: number, date: Moment) {
-  let userOk = false;
+export function checkIfValid(amount: number, date: Moment) {
   let amountOk = false;
   let dateOk = false;
-  if (user.match(/[A-z]/g)) {
-    userOk = true;
-  }
   if (amount <= 400 && amount > 10) {
     amountOk = true;
   }
@@ -14,11 +10,7 @@ export function checkIfValid(user: string, amount: number, date: Moment) {
   }
   if (dateOk) {
     if (amountOk) {
-      if (userOk) {
-        return "OK";
-      } else {
-        return "User not valid";
-      }
+      return "OK";
     } else {
       return "Please choose an amount greater than 10 Eur and not greater than 400 Eur";
     }
@@ -45,7 +37,7 @@ export function checkLatestInputs(tsArrayAsStr: string) {
       const firstClick = +timeStamps[0];
       const lastClick = +timeStamps[2];
       console.log(lastClick - firstClick);
-      if (lastClick - firstClick > 60000) {
+      if (lastClick - firstClick > 6000) {
         return true;
       } else {
         return false;

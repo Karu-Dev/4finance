@@ -1,6 +1,5 @@
 import {Moment} from "moment"
 export interface Loan {
-  user: string;
   date: Moment;
   amount: number;
   interest:number;

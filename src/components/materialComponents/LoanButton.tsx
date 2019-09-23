@@ -96,7 +96,7 @@ const LoanButtonFC: React.FC<
   }
 
   function buttonClick() {
-    const validator = checkIfValid(inputs.user, inputs.amount, inputs.date);
+    const validator = checkIfValid(inputs.amount, inputs.date);
     const sessionRiskHandler = checkTabOpenTime(sessionStorage.getItem(
       "tabOpen"
     ) as string);

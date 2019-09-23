@@ -2,6 +2,7 @@ import React from "react";
 import { State } from "../state/types";
 import { connect } from "react-redux";
 import { extendLoan } from "../state/actions";
+import { Typography, Paper, Button } from "@material-ui/core";
 function stateToProps(state: State) {
   return state;
 }
@@ -16,26 +17,32 @@ export const DisplayLoansFC: React.FC<
   ReturnType<typeof stateToProps> & ReturnType<typeof dispatchToProps>
 > = ({ loans, extendLoan }) => {
   return (
-    <table>
+    <div>
       {loans.map((it, id) => (
-        <tr key={id}>
-          <td>{(it.amount + it.interest).toFixed(2)} Euro</td>
-          <td>due to: {it.date.format("DD MM YYYY")}</td>
-          {it.isExtended ? (
-            ""
-          ) : (
-            <button
-              onClick={e => {
-                extendLoan(id);
-                e.preventDefault();
-              }}
-            >
-              Extend
-            </button>
-          )}
-        </tr>
+        <Paper style={{ textAlign: "center" }}>
+          <Typography variant="h5" component="h3">
+            {(it.amount + it.interest).toFixed(2)} Euro{" "}
+            {it.isExtended ? (
+              ""
+            ) : (
+              <Button
+                color="secondary"
+                variant="outlined"
+                onClick={e => {
+                  extendLoan(id);
+                  e.preventDefault();
+                }}
+              >
+                Extend
+              </Button>
+            )}
+          </Typography>
+          <Typography component="p">
+            due to: {it.date.format("DD MM YYYY")}
+          </Typography>
+        </Paper>
       ))}
-    </table>
+    </div>
   );
 };
 export const DisplayLoans = connect(
