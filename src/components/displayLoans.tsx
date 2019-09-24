@@ -23,7 +23,7 @@ export const DisplayLoansFC: React.FC<
           style={{
             textAlign: "center",
             color: "white",
-            backgroundColor: "rgba(48, 32, 17, 0.3)"
+            backgroundColor: "rgba(48, 32, 17, 0.7)"
           }}
         >
           <Typography variant="h5" component="h3">

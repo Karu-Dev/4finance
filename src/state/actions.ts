@@ -4,12 +4,6 @@ export const takeLoan = (data: Loan): { type: "TAKELOAN"; payload: Loan } => ({
   type: "TAKELOAN",
   payload: data
 });
-export const setUserInput = (
-  data: string
-): { type: "SETUSERINPUT"; payload: string } => ({
-  type: "SETUSERINPUT",
-  payload: data
-});
 export const setAmountInput = (
   data: number
 ): { type: "SETAMOUNTINPUT"; payload: number } => ({
@@ -30,7 +24,6 @@ export const extendLoan = (
   });
 export type ActionType =
   | ReturnType<typeof takeLoan>
-  | ReturnType<typeof setUserInput>
   | ReturnType<typeof setAmountInput>
   | ReturnType<typeof setDateInput>
   | ReturnType<typeof extendLoan>;

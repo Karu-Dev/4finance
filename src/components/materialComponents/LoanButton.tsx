@@ -1,5 +1,4 @@
 import React, { SyntheticEvent } from "react";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import Snackbar from "@material-ui/core/Snackbar";
 import { Loan, State } from "../../state/types";
@@ -20,14 +19,6 @@ function dispatchToProps(dispatch: any) {
     }
   };
 }
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    close: {
-      padding: theme.spacing(0.5),
-      backgroundColor: "gray"
-    }
-  })
-);
 
 export interface SnackbarMessage {
   message: string;
@@ -80,8 +71,6 @@ const LoanButtonFC: React.FC<
   const handleExited = () => {
     processQueue();
   };
-
-  const classes = useStyles();
   function spamValidator() {
     let browserStorage = localStorage.getItem("browserOpen");
     const timeNow = new Date().getTime();

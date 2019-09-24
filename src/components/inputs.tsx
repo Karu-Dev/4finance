@@ -2,7 +2,7 @@ import React from "react";
 import { State } from "../state/types";
 import moment, { Moment } from "moment";
 import { connect } from "react-redux";
-import { setUserInput, setAmountInput, setDateInput } from "../state/actions";
+import {setAmountInput, setDateInput } from "../state/actions";
 import { DiscreteSlider } from "./materialComponents/LoanSlider";
 import { LoanButton } from "./materialComponents/LoanButton";
 import { DatePicker } from "./materialComponents/DatePicker";
@@ -12,10 +12,6 @@ function stateToProps(state: State) {
 }
 function dispatchToProps(dispatch: any) {
   return {
-    setUserInput(user: string) {
-      console.log("lol");
-      dispatch(setUserInput(user));
-    },
     setAmountInput(amount: number) {
       dispatch(setAmountInput(amount));
     },

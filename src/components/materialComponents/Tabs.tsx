@@ -32,16 +32,9 @@ function TabPanel(props: TabPanelProps) {
   );
 }
 
-function a11yProps(index: any) {
-  return {
-    id: `full-width-tab-${index}`,
-    "aria-controls": `full-width-tabpanel-${index}`
-  };
-}
-
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    backgroundColor: "rgba(48, 32, 17, 0.3)",
+    backgroundColor: "rgba(48, 32, 17, 0.7)",
     width: 700,
     minHeight: 350,
     color: "lightgray"
@@ -56,11 +49,6 @@ export default function TabSelection() {
   const handleChange = (event: React.ChangeEvent<{}>, newValue: number) => {
     setValue(newValue);
   };
-
-  const handleChangeIndex = (index: number) => {
-    setValue(index);
-  };
-
   return (
     <div className={classes.root}>
       <AppBar
