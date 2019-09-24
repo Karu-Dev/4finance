@@ -24,7 +24,7 @@ export default function Navigation() {
 
   return (
     <div className={classes.root}>
-      <AppBar style={{ backgroundColor: "rgba(255, 179, 103, 0.8)" }}>
+      <AppBar style={{ backgroundColor: "rgba(255, 179, 103, 0.3)" }}>
         <Toolbar>
           <Typography
             variant="h6"

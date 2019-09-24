@@ -34,7 +34,7 @@ function TabPanel(props: TabPanelProps) {
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    backgroundColor: "rgba(48, 32, 17, 0.7)",
+    backgroundColor: "rgba(48, 32, 17, 0.3)",
     width: 700,
     minHeight: 350,
     color: "lightgray"
