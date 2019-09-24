@@ -5,8 +5,8 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import { Inputs } from "../inputs";
-import { DisplayLoans } from "../displayLoans";
+import { Inputs } from "../Inputs";
+import { DisplayLoans } from "../DisplayLoans";
 
 interface TabPanelProps {
   children?: React.ReactNode;

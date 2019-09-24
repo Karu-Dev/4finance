@@ -9,10 +9,10 @@ import {
 import { State } from "../../state/types";
 import { setDateInput } from "../../state/actions";
 import { connect } from "react-redux";
-function stateToProps(state: State) {
+const stateToProps = (state: State) => {
   return state;
 }
-function dispatchToProps(dispatch: any) {
+const dispatchToProps = (dispatch: any) => {
   return {
     setDateInput(date: Moment) {
       dispatch(setDateInput(date));

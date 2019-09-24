@@ -9,10 +9,10 @@ import {
   checkTabOpenTime,
   checkLatestInputs
 } from "../../functions/Validation";
-function stateToProps(state: State) {
+const stateToProps = (state: State) =>{
   return state;
 }
-function dispatchToProps(dispatch: any) {
+const dispatchToProps = (dispatch: any) => {
   return {
     takeLoan(loan: Loan) {
       dispatch(takeLoan(loan));

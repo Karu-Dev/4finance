@@ -6,10 +6,10 @@ import Typography from "@material-ui/core/Typography";
 import Slider from "@material-ui/core/Slider";
 import { connect } from "react-redux";
 import { Grid } from "@material-ui/core";
-function stateToProps(state: State) {
+const stateToProps = (state: State) => {
   return state;
 }
-function dispatchToProps(dispatch: any) {
+const dispatchToProps = (dispatch: any) => {
   return {
     setAmountInput(amount: number) {
       dispatch(setAmountInput(amount));

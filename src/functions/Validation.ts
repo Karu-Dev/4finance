@@ -28,7 +28,6 @@ export function checkTabOpenTime(ts: string) {
   }
 }
 export function checkLatestInputs(tsArrayAsStr: string) {
-  console.log(tsArrayAsStr);
   if (tsArrayAsStr) {
     const timeStamps = tsArrayAsStr.split(",");
     if (timeStamps.length < 3) {
@@ -36,7 +35,6 @@ export function checkLatestInputs(tsArrayAsStr: string) {
     } else {
       const firstClick = +timeStamps[0];
       const lastClick = +timeStamps[2];
-      console.log(lastClick - firstClick);
       if (lastClick - firstClick > 6000) {
         return true;
       } else {

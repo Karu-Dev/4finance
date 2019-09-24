@@ -3,10 +3,10 @@ import { State } from "../state/types";
 import { connect } from "react-redux";
 import { extendLoan } from "../state/actions";
 import { Typography, Paper, Button } from "@material-ui/core";
-function stateToProps(state: State) {
+const stateToProps = (state: State) => {
   return state;
 }
-function dispatchToProps(dispatch: any) {
+const dispatchToProps = (dispatch: any) => {
   return {
     extendLoan(id: number) {
       dispatch(extendLoan(id));
