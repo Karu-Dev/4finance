@@ -5,7 +5,10 @@ import { State } from "./state/types";
 import { Inputs } from "./components/inputs";
 import { DisplayLoans } from "./components/displayLoans";
 import moment from "moment";
-import { Grid } from "@material-ui/core";
+import { Grid, Typography } from "@material-ui/core";
+import Navigation from "./components/materialComponents/Navigation";
+import TabSelection from "./components/materialComponents/Tabs";
+import WhyUs from "./components/materialComponents/InfoAccordion";
 function stateToProps(state: State) {
   return state;
 }
@@ -19,25 +22,28 @@ const AppFC: React.FC<
 > = () => {
   return (
     <div>
+      <Navigation></Navigation>
       <Grid container spacing={1}>
-        <Grid
-          item
-          xs={12}
-          style={{ display: "flex", justifyContent: "center" }}
-        >
-          <img
-            width="500"
-            height="300"
-            src="https://thumbs.gfycat.com/ConcreteLimitedCockerspaniel-size_restricted.gif"
-          />
+        <Grid item xs={1}></Grid>
+        <Grid item xs={10}>
+          <Grid container spacing={1}>
+            <Grid
+              item
+              xs={5}
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+              }}
+            >
+              <WhyUs></WhyUs>
+            </Grid>
+            <Grid item xs={7}>
+              <TabSelection></TabSelection>
+            </Grid>
+          </Grid>
         </Grid>
-
-        <Grid item xs={1} />
-        <Grid item xs={10} className="mainComponent">
-          <DisplayLoans></DisplayLoans>
-          <Inputs></Inputs>
-        </Grid>
-        <Grid item xs={1} />
+        <Grid item xs={1}></Grid>
       </Grid>
     </div>
   );

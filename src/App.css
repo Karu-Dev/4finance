@@ -2,7 +2,7 @@
   text-align: center;
 }
 .mainComponent {
-  background-color: orange;
+  background-color: rgba(48, 32, 17, 0.3);
 }
 .App-logo {
   height: 40vmin;
@@ -12,7 +12,14 @@ body td {
   width: 10rem;
   border: 1px solid black;
 }
-
+body {
+  background-color: rgb(189, 128, 70);
+  background-image: url("./img/background.png");
+  background-size: cover;
+}
+.date-picker-inline {
+  color: white;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

@@ -22,8 +22,8 @@ export const DisplayLoansFC: React.FC<
         <Paper
           style={{
             textAlign: "center",
-            backgroundColor: "gray",
-            color: "white"
+            color: "white",
+            backgroundColor: "rgba(48, 32, 17, 0.3)"
           }}
         >
           <Typography variant="h5" component="h3">

@@ -111,11 +111,12 @@ const LoanButtonFC: React.FC<
             interest: parseFloat((inputs.amount / 10).toFixed(2)),
             isExtended: false
           });
+          handleClick(`Your loan of ${inputs.amount} Eur has been accepted!`)();
         } else {
-          handleClick("Spammer")();
+          handleClick("Clicked the loan button too often")();
         }
       } else {
-        handleClick("We're sorry blabla")();
+        handleClick("Clicked the loan button too quickly")();
       }
     } else {
       handleClick(validator)();
@@ -125,7 +126,7 @@ const LoanButtonFC: React.FC<
     <div>
       <Button
         style={{
-          backgroundColor: "gray",
+          backgroundColor: "rgba(48, 32, 17, 0.7)",
           color: "white"
         }}
         variant="outlined"

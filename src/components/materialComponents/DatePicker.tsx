@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import MomentUtils from "@date-io/moment";
-import moment,{ Moment } from "moment";
+import moment, { Moment } from "moment";
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker
@@ -25,31 +25,31 @@ const DatePickerFC: React.FC<
   // The first commit of Material-UI
   function handleDateChange(date: Moment | null) {
     if (date) {
-        const newTime = new Date(date.format())
+      const newTime = new Date(date.format());
       setDateInput(moment(newTime));
     }
   }
 
   return (
-   <div className="DatePicker">
+    <div className="DatePicker" style={{ color: "white !important" }}>
       <MuiPickersUtilsProvider utils={MomentUtils}>
-      <Grid container justify="flex-start">
-        <KeyboardDatePicker
-          disableToolbar
-          variant="inline"
-          format="DD/MM/YYYY"
-          margin="none"
-          id="date-picker-inline"
-          label="Select a return date"
-          value={inputs.date}
-          onChange={handleDateChange}
-          KeyboardButtonProps={{
-            "aria-label": "change date"
-          }}
-        />
-      </Grid>
-    </MuiPickersUtilsProvider>
-   </div>
+        <Grid container justify="flex-start">
+          <KeyboardDatePicker
+            disableToolbar
+            variant="inline"
+            format="DD/MM/YYYY"
+            margin="none"
+            id="date-picker-inline"
+            label="Select a return date"
+            value={inputs.date}
+            onChange={handleDateChange}
+            KeyboardButtonProps={{
+              "aria-label": "change date"
+            }}
+          />
+        </Grid>
+      </MuiPickersUtilsProvider>
+    </div>
   );
 };
 export const DatePicker = connect(
