@@ -8,14 +8,14 @@ import { connect } from "react-redux";
 import { Grid } from "@material-ui/core";
 const stateToProps = (state: State) => {
   return state;
-}
+};
 const dispatchToProps = (dispatch: any) => {
   return {
     setAmountInput(amount: number) {
       dispatch(setAmountInput(amount));
     }
   };
-}
+};
 const useStyles = makeStyles(theme => ({
   root: {
     width: 300
@@ -54,7 +54,7 @@ export const DiscreteSliderFC: React.FC<
       <Grid container spacing={3} style={{ display: "flex" }}>
         <Grid item xs={9}>
           <Typography id="discrete-slider" gutterBottom>
-            Cik vēlies saņemt?
+            Enter an amount
           </Typography>
           <Slider
             defaultValue={50}
@@ -70,7 +70,7 @@ export const DiscreteSliderFC: React.FC<
             }}
           />
         </Grid>
-        <Grid item xs={3} style={{ margin:"30px 0 0 0" }}>
+        <Grid item xs={3} style={{ margin: "30px 0 0 0" }}>
           <input
             style={{ width: "30px" }}
             type="text"

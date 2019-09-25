@@ -14,7 +14,9 @@ body td {
 }
 body {
   background-color: rgb(189, 128, 70);
-  background-image: url("./img/repeating-bg.png");
+  background-image: url("./img/test-pattern.png");
+  background-size: cover;
+  min-width: 660px;
 }
 .date-picker-inline {
   color: white;

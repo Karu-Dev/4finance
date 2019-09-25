@@ -5,7 +5,7 @@ import { State } from "./state/types";
 import { Grid } from "@material-ui/core";
 import Navigation from "./components/materialComponents/Navigation";
 import TabSelection from "./components/materialComponents/Tabs";
-import WhyUs from "./components/materialComponents/InfoAccordion";
+import InfoAccordion from "./components/materialComponents/InfoAccordion";
 function stateToProps(state: State) {
   return state;
 }
@@ -22,7 +22,7 @@ const AppFC: React.FC<
       <Navigation></Navigation>
       <Grid container spacing={1}>
         <Grid item xs={1}></Grid>
-        <Grid item xs={10}>
+        <Grid item xs={11}>
           <Grid container spacing={1}>
             <Grid
               item
@@ -33,14 +33,13 @@ const AppFC: React.FC<
                 alignItems: "center"
               }}
             >
-              <WhyUs></WhyUs>
+              <InfoAccordion></InfoAccordion>
             </Grid>
             <Grid item xs={7}>
               <TabSelection></TabSelection>
             </Grid>
           </Grid>
         </Grid>
-        <Grid item xs={1}></Grid>
       </Grid>
     </div>
   );

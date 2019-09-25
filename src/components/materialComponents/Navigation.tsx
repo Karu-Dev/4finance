@@ -31,7 +31,7 @@ export default function Navigation() {
             className={classes.title}
             style={{ textAlign: "left" }}
           >
-            Nugget, Bisquit, Nugget in a Bisquit
+            Your favorite crediting service
           </Typography>
         </Toolbar>
       </AppBar>

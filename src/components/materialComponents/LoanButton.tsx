@@ -9,16 +9,16 @@ import {
   checkTabOpenTime,
   checkLatestInputs
 } from "../../functions/Validation";
-const stateToProps = (state: State) =>{
+const stateToProps = (state: State) => {
   return state;
-}
+};
 const dispatchToProps = (dispatch: any) => {
   return {
     takeLoan(loan: Loan) {
       dispatch(takeLoan(loan));
     }
   };
-}
+};
 
 export interface SnackbarMessage {
   message: string;
@@ -125,9 +125,9 @@ const LoanButtonFC: React.FC<
           buttonClick();
         }}
       >
-        Saņemt{" "}
+        Get{" "}
         {inputs.amount > 400 ? 400 : inputs.amount < 50 ? 50 : inputs.amount}{" "}
-        Eur jau tulīt!
+        Eur Now!
       </Button>
       <Snackbar
         key={messageInfo ? messageInfo.key : undefined}

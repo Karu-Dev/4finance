@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function WhyUs() {
+export default function InfoAccordion() {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState<string | false>("panel1");
 

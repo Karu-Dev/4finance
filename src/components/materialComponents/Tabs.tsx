@@ -63,8 +63,8 @@ export default function TabSelection() {
           variant="fullWidth"
           aria-label="full width tabs example"
         >
-          <Tab label="Paņemt kredītu!" />
-          <Tab label="Kredītu vēsture" />
+          <Tab label="Take a loan" />
+          <Tab label="Loan history" />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0} dir={theme.direction}>
