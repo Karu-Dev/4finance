@@ -20,7 +20,7 @@ export function checkIfValid(amount: number, date: Moment) {
 }
 export function checkTabOpenTime(ts: string) {
   const timeNow = new Date().getTime();
-  const thirtySeconds = 3000;
+  const thirtySeconds = 30000;
   if (timeNow > +ts + thirtySeconds) {
     return true;
   } else {
@@ -35,7 +35,8 @@ export function checkLatestInputs(tsArrayAsStr: string) {
     } else {
       const firstClick = +timeStamps[0];
       const lastClick = +timeStamps[2];
-      if (lastClick - firstClick > 6000) {
+      const sixtySeconds = 60000
+      if (lastClick - firstClick > sixtySeconds ) {
         return true;
       } else {
         return false;

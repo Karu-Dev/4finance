@@ -51,7 +51,7 @@ export const DiscreteSliderFC: React.FC<
 
   return (
     <div className={classes.root}>
-      <Grid container spacing={3} style={{ display: "flex" }}>
+      <Grid container spacing={3} style={{ display: "flex", color: "white" }}>
         <Grid item xs={9}>
           <Typography id="discrete-slider" gutterBottom>
             Enter an amount
