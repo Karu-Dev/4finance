@@ -1,11 +1,11 @@
 import React from "react";
-import { State } from "../../state/types";
+import { State } from "../state/types";
 import moment, { Moment } from "moment";
 import { connect } from "react-redux";
-import {setAmountInput, setDateInput } from "../../state/actions";
-import { DiscreteSlider } from "./LoanSlider";
-import { LoanButton } from "./LoanButton";
-import { DatePicker } from "./DatePicker";
+import {setAmountInput, setDateInput } from "../state/actions";
+import { DiscreteSlider } from "./materialComponents/LoanSlider";
+import { LoanButton } from "./materialComponents/LoanButton";
+import { DatePicker } from "./materialComponents/DatePicker";
 import { Grid } from "@material-ui/core";
 const stateToProps = (state: State) => {
   return state;
