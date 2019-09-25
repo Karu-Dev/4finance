@@ -1,7 +1,7 @@
 import React from "react";
-import { State } from "../state/types";
+import { State } from "../../state/types";
 import { connect } from "react-redux";
-import { extendLoan } from "../state/actions";
+import { extendLoan } from "../../state/actions";
 import { Typography, Paper, Button } from "@material-ui/core";
 const stateToProps = (state: State) => {
   return state;
