@@ -5,16 +5,16 @@ Live here : [https://4finance.remeku.xyz](<https://4finance.remeku.xyz>)
 Tech in use: React, Redux, Jest  
 
 
-Goal
+# Goal  
 Create a simple micro-lending web application, where client can choose amount and term for the loan to apply. Similar to one of our existing products.
  
-Requirements
+# Requirements  
 User can apply for loan with a form that is shown on frontpage:
 - option to enter amount: limited to up 400 euro
 - option to enter date: limited to up 30 days from today (may be provided by some calendar picker or just use plain number of days)
 - text showing the amount he’ll need to pay back on desired date - recalculated dynamically as amount or date change using 10% fixed rate
 - submit button to save applied loan to application state / browser storage
- 
+
 Application should perform risk assessment based on following rules:
 Risk is considered too high if:
 - the attempt to take loan is made faster than 30 seconds from page load with max possible amount
